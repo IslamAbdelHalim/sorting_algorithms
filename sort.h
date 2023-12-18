@@ -30,8 +30,7 @@ void quick_sort(int *array, size_t size);
 int quick_partion(int *array, int low, int high);
 void quick_sort_partioning(int *array, int low, int  high, size_t size);
 
-int findMax(int *array, size_t size);
-void countingSort(int *array, ssize_t size, int exp);
-void radix_sort(int *array, size_t size);
+void counting_sort(int *array, size_t size);
+int max(int *array, size_t size);
 
 #endif
