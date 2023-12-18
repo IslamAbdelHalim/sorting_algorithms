@@ -28,7 +28,7 @@ void swap(int *i, int *j)
  * Return: The index of pivot
 */
 
-int quick_partion(int *array, int low, int high)
+int quick_partion(int *array, int low, int high, size_t size)
 {
 	int pivot, i, j;
 
@@ -45,6 +45,8 @@ int quick_partion(int *array, int low, int high)
 	}
 
 	swap(&array[i + 1], &array[high]);
+	
+	print_array(array, size);
 
 	return (i + 1);
 }
@@ -67,12 +69,12 @@ void quick_sort_partioning(int *array, int low, int  high, size_t size)
 
 	if (low < high)
 	{
-		pivot = quick_partion(array, low, high);
+		pivot = quick_partion(array, low, high, size);
 
-		print_array(array, size);
 
 		/*partion the lower part*/
 		quick_sort_partioning(array, low, pivot - 1, size);
+
 		/*partion the greater part*/
 		quick_sort_partioning(array, pivot + 1, high, size);
 	}
@@ -89,6 +91,9 @@ void quick_sort_partioning(int *array, int low, int  high, size_t size)
 void quick_sort(int *array, size_t size)
 {
 	int low, high;
+
+	if (!array || size <= 2)
+		return;
 
 	low = 0;
 	high = size - 1;
