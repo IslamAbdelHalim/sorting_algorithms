@@ -18,6 +18,7 @@ int max_num = array[0];
     return (max_num);
 }
 
+
 /**
  * counting_sort - function to perform the counting sort algorithm
  * @array: the array to be sorted
