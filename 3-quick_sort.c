@@ -16,7 +16,7 @@ void swap(int *i, int *j)
 	*j = temp;
 }
 /**
- * quick_partion - function that that compare
+ * quick_sort_partion - function that that compare
  * and return the index of divide the partion
  *
  * @array: array
@@ -26,8 +26,6 @@ void swap(int *i, int *j)
  * @high: The end of partion and pivoti
  *
  * @size: The size of array
- *
- * Return: The index of pivot
 */
 
 void quick_sort_partion(int *array, int low, int high, size_t size)
@@ -44,14 +42,19 @@ void quick_sort_partion(int *array, int low, int high, size_t size)
 			if (array[j] <= pivot)
 			{
 				i++;
-				swap(&array[j], &array[i]);
-				print_array(array, size);
+				if (i != j)
+				{
+					swap(&array[i], &array[j]);
+					print_array(array, size);
+				}
 			}
 		}
 
-		swap(&array[i + 1], &array[high]);
-		print_array(array, size);
-
+		if (array[i + 1] > array[high])
+		{
+			swap(&array[i + 1], &array[high]);
+			print_array(array, size);
+		}
 		pivot_idx = i + 1;
 
 		quick_sort_partion(array, low, (pivot_idx - 1), size);
