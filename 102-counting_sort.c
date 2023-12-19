@@ -33,14 +33,14 @@ size_t k = max_num + 1;
 	if (!array || size < 2)
 		return;
 
-	sorted_arr = malloc(size * sizeof(size_t));
-	if (sorted_arr == NULL)
-		return;
-
 	count = malloc(k * sizeof(size_t));
 	if (count == NULL)
+		return;
+
+	sorted_arr = malloc(size * sizeof(size_t));
+	if (sorted_arr == NULL)
 	{
-		free(sorted_arr);
+		free(count);
 		return;
 	}
 
@@ -48,7 +48,7 @@ size_t k = max_num + 1;
 		count[y] = 0;
 
 	for (y = 0; y < size; y++)
-		count[array[y]]++;
+		++count[array[y]];
 
 	for (y = 0; y < k; y++)
 		count[y] += count[y - 1];
