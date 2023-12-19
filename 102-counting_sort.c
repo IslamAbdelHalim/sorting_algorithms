@@ -50,7 +50,7 @@ size_t k = max_num + 1;
 	for (y = 0; y < size; y++)
 		++count[array[y]];
 
-	for (y = 0; y < k; y++)
+	for (y = 0; y <= k; y++)
 		count[y] += count[y - 1];
 
 	print_array(count, k);
