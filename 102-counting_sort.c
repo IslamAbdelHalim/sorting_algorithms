@@ -55,7 +55,7 @@ size_t k = max_num + 1;
 
 	print_array(count, k);
 
-	for (y = (size - 1); y > 0; y--)
+	for (y = (size - 1); y != SIZE_MAX; y--)
 		sorted_arr[--count[array[y]]] = array[y];
 
 	for (y = 0; y < size; y++)
