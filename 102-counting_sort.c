@@ -33,14 +33,14 @@ size_t k = max_num + 1;
 	if (!array || size < 2)
 		return;
 
-	count = malloc(k * sizeof(size_t));
-	if (count == NULL)
-		return;
-
 	sorted_arr = malloc(size * sizeof(size_t));
 	if (sorted_arr == NULL)
+		return;
+
+	count = malloc(k * sizeof(size_t));
+	if (count == NULL)
 	{
-		free(count);
+		free(sorted_arr);
 		return;
 	}
 
