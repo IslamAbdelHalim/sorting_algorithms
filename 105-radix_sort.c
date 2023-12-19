@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * max: function return finding the max number
+ * max - function return finding the max number
  *
  * @array: The main array
  *
