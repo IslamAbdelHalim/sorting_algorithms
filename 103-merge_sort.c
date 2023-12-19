@@ -45,7 +45,7 @@ void merge_subarray(int *array, int *temp_array, int down, int top)
 
 	if (down < top)
 	{
-		mid = (down + top) / 2;
+		mid = down + (top - down) / 2;
 
 		/*left subarray*/
 		merge_subarray(array, temp_array, down, mid);
@@ -53,7 +53,7 @@ void merge_subarray(int *array, int *temp_array, int down, int top)
 		merge_subarray(array, temp_array, mid + 1, top);
 
 		/*Making merge with each to list*/
-		merge(array, temp_array, down, mid + 1, top);
+		merge(array, temp_array, down, mid, top);
 	}
 }
 
