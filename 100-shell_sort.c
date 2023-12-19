@@ -21,10 +21,10 @@ void shell_sort(int *array, size_t size)
 	{
 		for (i = gap; i < size; i++)
 		{
-			for (j = i; j >= gap && array[i - gap] > array[j]; j -= gap)
+			for (j = i; j >= gap && array[j - gap] > array[j]; j -= gap)
 				swap(&array[j], &array[j - gap]);
 		}
-		gap = gap / 3;
+		gap /= 3;
 		print_array(array, size);
 	}
 }
