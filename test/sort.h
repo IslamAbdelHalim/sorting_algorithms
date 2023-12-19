@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+#include <stdint.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -32,10 +32,10 @@ void selection_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void quick_sort(int *array, size_t size);
 
-int findMax(int *array, size_t size);
-void countingSort(int *array, size_t size, int exp);
+
+int max(int *array, size_t size);
+void countingSort_radix(int *array, size_t size, int pass, int *sorted);
 void radix_sort(int *array, size_t size);
 
 void counting_sort(int *array, size_t size);
-int max(int *array, int size);
 #endif /* __SORT_H__ */

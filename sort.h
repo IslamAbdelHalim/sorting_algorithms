@@ -37,10 +37,9 @@ void merge(int *array, int *temp_array, int down, int mid, int top);
 
 void shell_sort(int *array, size_t size);
 
-int findMax(int *array, size_t size);
-void countingSort(int *array, ssize_t size, int exp);
-void radix_sort(int *array, size_t size);
-
+/*counting and radix sort*/
 void counting_sort(int *array, size_t size);
 int max(int *array, size_t size);
+void countingSort_radix(int *array, size_t size, int pass, int *sorted);
+void radix_sort(int *array, size_t size);
 #endif
