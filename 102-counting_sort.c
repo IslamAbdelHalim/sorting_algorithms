@@ -44,7 +44,7 @@ size_t k = max_num + 1;
 		return;
 	}
 
-	for (y = 0; y < k; y++)
+	for (y = 0; y <= k; y++)
 		count[y] = 0;
 
 	for (y = 0; y < size; y++)
