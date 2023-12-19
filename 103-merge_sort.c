@@ -53,7 +53,7 @@ void merge_subarray(int *array, int *temp_array, int down, int top)
 		merge_subarray(array, temp_array, mid + 1, top);
 
 		/*Making merge with each to list*/
-		merge(array, temp_array, down, mid, top);
+		merge(array, temp_array, down, mid + 1, top);
 	}
 }
 
@@ -83,9 +83,9 @@ void merge(int *array, int *temp_array, int down, int mid, int top)
 
 	printf("Merging...\n");
 	printf("[left]: ");
-	print_array(array + down, mid - down + 1);
+	print_array(array + down, (mid - down));
 	printf("[right]: ");
-	print_array(array + mid + 1, top - mid);
+	print_array(array + mid, (top - mid + 1));
 
 	while (i <= mid && j <= top)
 	{
