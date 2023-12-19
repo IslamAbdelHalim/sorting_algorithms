@@ -4,6 +4,7 @@
 /***********Header_files*****/
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 
 /**
@@ -32,6 +33,9 @@ void insertion_sort_list(listint_t **list);
 void quick_sort(int *array, size_t size);
 
 int findMax(int *array, size_t size);
-void countingSort(int *array, ssize_t size, int exp);
+void countingSort(int *array, size_t size, int exp);
 void radix_sort(int *array, size_t size);
+
+void counting_sort(int *array, size_t size);
+int max(int *array, int size);
 #endif /* __SORT_H__ */

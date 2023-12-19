@@ -1,5 +1,5 @@
 #include "sort.h"
-#include <unistd.h>
+
 /**
  * findMax - fun sort
  * @array: to sort it
@@ -28,7 +28,6 @@ int max;
  * @exp: to sort
  * 
 */
-#include "sort.h"
 
 void countingSort(int *array, ssize_t size, int exp)
 {

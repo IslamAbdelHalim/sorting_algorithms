@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -38,4 +39,6 @@ int findMax(int *array, size_t size);
 void countingSort(int *array, ssize_t size, int exp);
 void radix_sort(int *array, size_t size);
 
+void counting_sort(int *array, size_t size);
+int max(int *array, size_t size);
 #endif
