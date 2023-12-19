@@ -19,6 +19,8 @@ void merge_sort(int *array, size_t size)
 	top = size - 1;
 	/*Making a temporary array that take a sorted element*/
 	temp_array = malloc(sizeof(int) * size);
+	if (temp_array == NULL)
+		return;
 
 	/*Recursion function devided array until become each element as signle array*/
 	merge_subarray(array, temp_array, down, top);
@@ -81,9 +83,9 @@ void merge(int *array, int *temp_array, int down, int mid, int top)
 
 	printf("Merging...\n");
 	printf("[left]: ");
-	print_array(array + down, (mid - down));
+	print_array(array + down, mid - down + 1);
 	printf("[right]: ");
-	print_array(array + mid, (top - mid + 1));
+	print_array(array + mid + 1, top - mid);
 
 	while (i <= mid && j <= top)
 	{
