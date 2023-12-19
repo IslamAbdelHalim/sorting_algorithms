@@ -1,14 +1,15 @@
 #include "sort.h"
 
 /**
- * max: function return max
+ * max: function return finding the max number
  *
  * @array: The main array
  *
  * @size: The size of array
  *
- * Return: The max
+ * Return: The max Number
 */
+
 int max(int *array, size_t size)
 {
 size_t x;
@@ -23,7 +24,7 @@ int max_num = array[0];
 }
 
 /**
- * countingsort - function that making counting sort
+ * countingSort_radix - function that making counting sort
  *
  * @array: The main Array
  *
@@ -31,11 +32,12 @@ int max_num = array[0];
  *
  * @pass: The pass
  *
- * @array sorted
+ * @sorted: the array sorted
 */
+
 void countingSort_radix(int *array, size_t size, int pass, int *sorted)
 {
-size_t k = max(array, size);
+size_t k = (max(array, size) + 1);
 int *count = malloc(k * sizeof(size_t));
 size_t i;
 
