@@ -19,6 +19,8 @@ void merge_sort(int *array, size_t size)
 	top = size - 1;
 	/*Making a temporary array that take a sorted element*/
 	temp_array = malloc(sizeof(int) * size);
+	if (temp_array == NULL)
+		return;
 
 	/*Recursion function devided array until become each element as signle array*/
 	merge_subarray(array, temp_array, down, top);
@@ -43,7 +45,7 @@ void merge_subarray(int *array, int *temp_array, int down, int top)
 
 	if (down < top)
 	{
-		mid = (down + top) / 2;
+		mid = down + (top - down) / 2;
 
 		/*left subarray*/
 		merge_subarray(array, temp_array, down, mid);
@@ -51,7 +53,7 @@ void merge_subarray(int *array, int *temp_array, int down, int top)
 		merge_subarray(array, temp_array, mid + 1, top);
 
 		/*Making merge with each to list*/
-		merge(array, temp_array, down, mid, top);
+		merge(array, temp_array, down, mid + 1, top);
 	}
 }
 
@@ -77,17 +79,21 @@ void merge(int *array, int *temp_array, int down, int mid, int top)
 	 * j => for the second sub array
 	 * k => for the temp_array
 	 */
-	i = down, j = mid + 1, k = down;
+	i = down, j = mid, k = down;
 
 	printf("Merging...\n");
 	printf("[left]: ");
-	print_array(array + down, (mid - down + 1));
+	print_array(array + down, (mid - down));
 	printf("[right]: ");
-	print_array(array + mid + 1, (top - mid));
+	print_array(array + mid, (top - mid + 1));
 
 	while (i <= mid && j <= top)
 	{
-		if (array[i] <= array[j])
+		if (i == mid)
+			temp_array[k++] = array[j++];
+		else if (j == top + 1)
+			temp_array[k++] = array[i++];
+		else if (array[i] < array[j])
 			temp_array[k++] = array[i++];
 		else
 			temp_array[k++] = array[j++];
