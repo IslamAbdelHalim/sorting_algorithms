@@ -80,7 +80,7 @@ int *sorted;
 	if (sorted == NULL)
 		return;
 
-	for (pass = 1; (max_num / pass) >= 1; (pass *= 10))
+	for (pass = 1; (max_num / pass) >= 1 && pass != 0; (pass *= 10))
 	{
 		countingSort_radix(array, size, pass, sorted);
 		print_array(array, size);
