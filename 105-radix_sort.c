@@ -45,7 +45,7 @@ size_t i;
 		return;
 
 	for (i = 0; i < k; i++)
-		count[0] = 0;
+		count[i] = 0;
 
 	for (i = 0; i < size; i++)
 		++count[(array[i] / pass) % 10];
@@ -80,7 +80,7 @@ int *sorted;
 	if (sorted == NULL)
 		return;
 
-	for (pass = 1; (max_num / pass) > 0; (pass *= 10))
+	for (pass = 1; (max_num / pass) >= 1; (pass *= 10))
 	{
 		countingSort_radix(array, size, pass, sorted);
 		print_array(array, size);
