@@ -41,13 +41,16 @@ size_t k = (max(array, size) + 1);
 int *count = malloc(k * sizeof(int));
 size_t i;
 
-	for (i = 0; i <= k; i++)
+	if (count == NULL)
+		return;
+
+	for (i = 0; i < k; i++)
 		count[0] = 0;
 
 	for (i = 0; i < size; i++)
 		++count[(array[i] / pass) % 10];
 
-	for (i = 1; i <= k; i++)
+	for (i = 1; i < k; i++)
 		count[i] += count[i - 1];
 
 	for (i = (size - 1); i != SIZE_MAX; i--)
