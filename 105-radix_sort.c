@@ -41,6 +41,11 @@ size_t k = (max(array, size) + 1);
 int *count = malloc(k * sizeof(int));
 size_t i;
 
+	if (!array || size < 2)
+	{
+		return;
+	}
+
 	if (count == NULL)
 		return;
 
