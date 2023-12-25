@@ -72,10 +72,13 @@ void radix_sort(int *array, size_t size)
 {
 int max_num = max(array, size);
 int pass;
-int *sorted;
+int *sorted = NULL;
 
 	if (!array || size < 2)
+	{
+		free(sorted);
 		return;
+	}
 	sorted = malloc(size * sizeof(int));
 	if (sorted == NULL)
 		return;
