@@ -8,8 +8,11 @@
 int max(int *array, size_t size)
 {
 size_t x;
-int max_num = array[0];
+int max_num = 0;
 
+	if (array == NULL || size == 0)
+        return 0;
+	max_num = array[0];
 	for (x = 1; x < size; x++)
 	{
 		if (array[x] > max_num)
