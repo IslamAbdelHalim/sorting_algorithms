@@ -38,7 +38,7 @@ int max_num = array[0];
 void countingSort_radix(int *array, size_t size, int pass, int *sorted)
 {
 size_t k = (max(array, size) + 1);
-int *count = malloc(k * sizeof(size_t));
+int *count = malloc(k * sizeof(int));
 size_t i;
 
 	for (i = 0; i <= k; i++)
@@ -69,13 +69,13 @@ void radix_sort(int *array, size_t size)
 {
 int max_num = max(array, size);
 int pass;
-int *sorted = malloc(size * sizeof(int));
+int *sorted;
 
-	if (!array || size < 2 || sorted == NULL)
-	{
-		free(sorted);
+	if (!array || size < 2)
 		return;
-	}
+	sorted = malloc(size * sizeof(int));
+	if (sorted == NULL)
+		return;
 
 	for (pass = 1; (max_num / pass) > 0; (pass *= 10))
 	{
