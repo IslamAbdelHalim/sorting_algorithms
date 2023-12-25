@@ -41,11 +41,6 @@ size_t k = (max(array, size) + 1);
 int *count = malloc(k * sizeof(int));
 size_t i;
 
-	if (!array || size < 2)
-	{
-		return;
-	}
-
 	if (count == NULL)
 		return;
 
@@ -79,7 +74,7 @@ int max_num = max(array, size);
 int pass;
 int *sorted = NULL;
 
-	if (!array || size < 2)
+	if (!array || size == 2)
 	{
 		free(sorted);
 		return;
